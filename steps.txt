@@ -1,0 +1,14 @@
+------------
+This will create a docker image from a Dockerfile
+This simple app will create a container running an Ubuntu image that installs python and flask and builds a simple web page
+------------
+
+1. Run `docker build -t my-simple-web-app` to create the image
+                      ^               
+                      This provides a custom name for the image
+2. Once complete you will see the new custom image in docker either in UI, or by typing `docker images`
+3. Run the image  from either the UI or by typing `docker run -e APP_COLOR=blue -p 8080:8080 my-simple-web-app`
+                                                                 ^               ^
+                                                                 Environment     This ensures container website is availabe from host site on the same port
+                                                                 variable 
+NOTE: If you change the Dockerfile commands it will only rebuild that piece (it uses cached version of other steps)
